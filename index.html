@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Presentation Maker - Presento.AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="flex items-center justify-between p-6 bg-white shadow-md">
+        <div class="flex items-center">
+            <img src="https://storage.googleapis.com/a1aa/image/wb_8mYgq9nORQhtDJCgT3hZmfAsR6d1cZrwEdMdCEIQ.jpg" 
+                 alt="Presento.AI Logo" class="h-10 w-10 rounded-full"/>
+            <span class="ml-3 text-xl font-bold text-purple-600">PRESENTO.AI</span>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="text-center mt-16">
+        <h1 class="text-4xl font-bold text-gray-900">AI Presentation Maker</h1>
+        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+            Need a quick and professional presentation? Let AI do the work for you! 
+            Generate structured slides with the perfect layout and visuals in just a few clicks.
+        </p>
+
+        <!-- CTA Button -->
+        <div class="mt-8">
+            <button onclick="window.location.href='search.html';" 
+                    class="bg-purple-600 text-white px-8 py-3 rounded-lg text-lg font-semibold flex items-center mx-auto space-x-2 hover:bg-purple-700 transition duration-300">
+                <span>Get Started</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+
+
+<!-- How It Works Button (Centered) -->
+<div class="mt-10 flex justify-center">
+    <button onclick="openModal()" class="text-purple-600 text-lg font-medium flex items-center">
+        <i class="fas fa-question-circle mr-2"></i> How does it work?
+    </button>
+</div>
+
+
+<!-- Modal (Hidden by Default) -->
+<div id="howItWorksModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">How It Works</h2>
+        <ul class="text-gray-600 space-y-2">
+            <li><i class="fas fa-check-circle text-green-500"></i> Enter your topic or upload content.</li>
+            <li><i class="fas fa-paint-brush text-blue-500"></i> AI suggests themes & layouts.</li>
+            <li><i class="fas fa-image text-purple-500"></i> Auto-adds relevant images & icons.</li>
+            <li><i class="fas fa-file-export text-red-500"></i> Export as PPTX, PDF, or share online.</li>
+        </ul>
+        <button onclick="closeModal()" class="mt-4 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">
+            Got it!
+        </button>
+    </div>
+</div>
+
+<!-- JavaScript for Modal -->
+<script>
+    function openModal() {
+        document.getElementById('howItWorksModal').classList.remove('hidden');
+    }
+    function closeModal() {
+        document.getElementById('howItWorksModal').classList.add('hidden');
+    }
+</script>
+
+    </main>
+
+</body>
+</html>
