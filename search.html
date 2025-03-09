@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Presentation Maker - Search</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .dropdown-menu { display: none; }
+        .dropdown:hover .dropdown-menu { display: block; }
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen">
+
+    <div class="w-full max-w-2xl p-6 bg-white rounded-lg shadow-md">
+        <!-- Header with Step Indicators & Close Button -->
+        <div class="flex justify-between items-center mb-6">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center">1</div>
+                <div class="w-8 h-8 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center">2</div>
+                <div class="w-8 h-8 bg-gray-200 text-gray-500 rounded-full flex items-center justify-center">3</div>
+            </div>
+            <button onclick="window.location.href='index.html';" class="text-gray-500 hover:text-gray-700 transition">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Title & Description -->
+        <h1 class="text-2xl font-semibold text-center mb-2">AI Presentation Maker 
+            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">BETA</span>
+        </h1>
+        <p class="text-center text-gray-600 mb-6">
+            Level up your slides game with our AI Presentation Maker. Generate a professional presentation in seconds!
+        </p>
+
+        <!-- Text Input Area -->
+        <div class="mb-6">
+            <textarea id="topicInput" class="w-full p-4 border border-gray-300 rounded-lg" rows="4" 
+                placeholder="Tell us your topic or goal"></textarea>
+        </div>
+
+        <!-- Buttons: Start & Slides Selection -->
+        <div class="flex justify-between items-center mb-6">
+            <button class="bg-purple-600 text-white px-6 py-3 rounded-lg flex items-center space-x-2">
+                <span>Get Started</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+
+            <!-- Dropdown for Slide Selection -->
+            <div class="relative dropdown">
+                <button id="slideBtn" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg flex items-center space-x-2">
+                    <i class="fas fa-layer-group"></i>
+                    <span id="selectedSlides">Slides (8-12)</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+
+                <!-- Dropdown Options -->
+                <div class="absolute right-0 mt-2 w-32 bg-white border border-gray-300 rounded-lg shadow-lg dropdown-menu">
+                    <ul class="text-gray-700">
+                        <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" onclick="setSlides(5)">5 Slides</li>
+                        <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" onclick="setSlides(8)">8 Slides</li>
+                        <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" onclick="setSlides(10)">10 Slides</li>
+                        <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer" onclick="setSlides(12)">12 Slides</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggestions (Clickable Topics) -->
+        <div class="text-center text-gray-600 mb-4">
+            <i class="fas fa-lightbulb text-purple-500"></i>
+            <span class="ml-2">Need some ideas?</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 transition" 
+                onclick="fillTextbox('History of the Universe\nA journey from the Big Bang to the formation of galaxies.')">
+                <h2 class="font-semibold mb-1">History of the Universe</h2>
+                <p class="text-gray-600 text-sm">A journey from the Big Bang to the formation of galaxies.</p>
+            </div>
+
+            <div class="p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-100 transition" 
+                onclick="fillTextbox(`The History of NASA\nDiscover NASA's most important achievements.`)">
+                <h2 class="font-semibold mb-1">The History of NASA</h2>
+                <p class="text-gray-600 text-sm">Discover NASA's most important achievements.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function fillTextbox(text) {
+            document.getElementById("topicInput").value = text;
+        }
+
+        function setSlides(number) {
+            document.getElementById("selectedSlides").textContent = `Slides (${number})`;
+        }
+    </script>
+
+</body>
+</html>
